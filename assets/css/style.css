@@ -1,9 +1,9 @@
 body {
     font-family: "Arial";
 }
-.panamed_logo {
-    width: 25%;
-    height: auto;
+.pmc_logo {
+    width: 20%;
+    height: 20%
 }
 .logo_container {
     margin: 0 2%;
@@ -17,7 +17,7 @@ body {
 }
 .bg-color {
     background-color: #e2e2e2;
-    border-bottom: 3px solid #002d62;
+    border-bottom: 3px solid #10155e;
 }
 .line-right {
     border-right: 1px solid #d4d4d4;
@@ -26,12 +26,12 @@ body {
     float: right;
 }
 .footer_container .btn-primary {
-    background-color: #002d62;
-    border-color: #002d62;
+    background-color: #10155e;
+    border-color: #040621;
 }
 .footer_container .btn-primary:hover {
-    background-color: #002d62;
-    border-color: #002d62;
+    background-color: #6da81a;
+    border-color: #8dc63f;
 }
 .required {
     color: red;

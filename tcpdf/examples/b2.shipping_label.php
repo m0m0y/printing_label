@@ -63,10 +63,6 @@ if($ship_via == "Lalamove") {
     $letter = "PX";
 } else if ($ship_via == "Forwarder") {
     $letter = "PF";
-} else if ($ship_via == "Sea") {
-    $letter = "PS";
-} else if ($ship_via == "Air") {
-    $letter = "PA";
 }
 
 for ($page = 0; $page <= $package; $page++) {
@@ -86,7 +82,7 @@ for ($x = 1; $x <= $package; $x++) {
 	$pdf->SetAutoPageBreak($auto_page_break, $bMargin);
 	$pdf->setPageMark();
 
-    $pmc_logo = $pdf->Image('../../assets/image/logo-bnw.png', 15, 9, 42, 0, 'PNG', '', '', true, 1000, '', false, false, 0, false, false, false);
+    // $pmc_logo = $pdf->Image('../../assets/image/logo-bnw.png', 7, 13, 40, 0, 'PNG', '', '', true, 1000, '', false, false, 0, false, false, false);
 
 	$fragile_icon = $pdf->Image('../../assets/image/R2.png', 7, 126, 31, 0, 'PNG', '', '', true, 1000, '', false, false, 0, false, false, false);
 
@@ -94,9 +90,9 @@ for ($x = 1; $x <= $package; $x++) {
 	$headText = 13;
 	ob_start();
 	?>
-        <table width="100">
-            <tr style="font-size: <?= $responsiveFont ?>px; text-align: center;">
-                <td><b><span style="font-size: 60px;"><?= $letter ?></b></span></td>
+        <table>
+            <tr style="font-size: <?= $responsiveFont ?>px; text-align: left;">
+                <td><b><span style="font-size: 70px;"><?= $letter ?></b></span></td>
             </tr>
         </table>
     <?php
@@ -114,9 +110,9 @@ for ($x = 1; $x <= $package; $x++) {
 
         ob_start();
     ?>
-        <table>
-            <tr style="font-size: 9px; text-align: left;">
-                <td>Progressive Medical Corporation5 Calle Industria<br>Bagumbayan Quezon City 1110 Philippines<br><small>Email: mailto:info@pmc.ph</small></td>
+        <table style="padding-right: 4px;">
+            <tr style="font-size: 10px; text-align: right;">
+                <td>Progressive Medical Corporation<br>5 Calle Industria Bagumbayan<br>Quezon City 1110 Philippines<br> <small>Email: mailto:info@pmc.ph</small></td>
             </tr>
         </table>
     <?php
@@ -304,10 +300,11 @@ for ($x = 1; $x <= $package; $x++) {
 
 	ob_start();
 
-    $pdf->SetXY(68, 8);
+    
+    $pdf->SetXY(6, 5);
 	$pdf->writeHTML($letters);
 
-	$pdf->SetXY(10, 21);
+	$pdf->SetXY(11, 11);
 	$pdf->writeHTML($from_address_top);
 
 	$pdf->SetXY(7, 33.5);
